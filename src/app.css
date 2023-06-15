@@ -1,0 +1,14 @@
+.animada {
+    position: absolute;
+    left:0;
+    animation-name: mover-izquierda;
+    animation-duration: 4s; /* Ajusta la duración de la animación según tus necesidades */
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes mover-izquierda {
+    50% {
+        left: calc(100% - 200px);
+    }
+  }
