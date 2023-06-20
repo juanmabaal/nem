@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/nem/static/css/main.ad756363.css",
+    "main.js": "/nem/static/js/main.97469850.js",
+    "static/media/TODO ES POSIBLE.png": "/nem/static/media/TODO ES POSIBLE.1557b7e61fd13776af13.png",
+    "index.html": "/nem/index.html",
+    "static/media/delete.svg": "/nem/static/media/delete.d9c7e0eeb3f573572e1521b7b69ed33e.svg",
+    "static/media/check.svg": "/nem/static/media/check.af03c9a6a0411e40578874e6f00e807b.svg",
+    "main.ad756363.css.map": "/nem/static/css/main.ad756363.css.map",
+    "main.97469850.js.map": "/nem/static/js/main.97469850.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad756363.css",
+    "static/js/main.97469850.js"
+  ]
+}
