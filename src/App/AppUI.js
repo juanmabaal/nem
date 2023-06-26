@@ -6,6 +6,8 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import imagen from '../TODO ES POSIBLE.png'
 
 function AppUI({
+    loading,
+    error,
     completedTodos,
     totalTodos,
     searchValue,
@@ -26,6 +28,9 @@ function AppUI({
           />
     
           <TodoList>
+            {loading && <p>Estamos cargando...</p>}
+            {error && <p>Cuidado, tienes un error!!</p>}
+            {(!loading && searchedTodos.length === 0) && <p>¡Crea tu primer TODO!</p>}
             {searchedTodos.map(todo => (
               <TodoItem
                 key={todo.text}
