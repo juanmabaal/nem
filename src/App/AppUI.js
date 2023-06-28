@@ -1,3 +1,4 @@
+import React from 'react';
 import { TodoSearch } from '../TodoSearch';
 import { TodoCounter } from '../TodoConter';
 import { TodoList } from '../TodoList';
@@ -9,21 +10,21 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import imagen from '../TODO ES POSIBLE.png'
 import { TodoContext } from '../TodoContext';
 
-
 function AppUI() {
+
+const {
+  loading,
+  error,
+  searchedTodos,
+  completedTodo,
+  deleteTodo,
+} = React.useContext(TodoContext);
+
     return (
         <>
           <TodoCounter  />
           <TodoSearch   />
-
-          <TodoContext.Consumer>
-            {({
-              loading,
-              error,
-              searchedTodos,
-              completedTodo,
-              deleteTodo,
-            })=> (
+          
               <TodoList>
               {loading && (
                 <>
@@ -44,8 +45,7 @@ function AppUI() {
                 />
               ))}
             </TodoList>
-            )}
-          </TodoContext.Consumer>
+            
           <img src={imagen} alt="Imagen" className='animada'/>
           <CreateTodoButton />
         </>
