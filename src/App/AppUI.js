@@ -7,43 +7,45 @@ import { TodosError } from '../TodosError';
 import { EmptyTodos} from '../EmptyTodos';
 import { CreateTodoButton } from '../CreateTodoButton';
 import imagen from '../TODO ES POSIBLE.png'
+import { TodoContext } from '../TodoContext';
 
-function AppUI({
-    loading,
-    error,
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completedTodo,
-    deleteTodo,
-}) {
+
+function AppUI() {
     return (
         <>
-          <TodoCounter 
-            completed={completedTodos} 
-            total={totalTodos} 
-          />
-          <TodoSearch 
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
-          />
-    
-          <TodoList>
-            {loading && <TodosLoading />}
-            {error && <TodosError />}
-            {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
-            {searchedTodos.map(todo => (
-              <TodoItem
-                key={todo.text}
-                text={todo.text}
-                completed={todo.completed}
-                onComplete={() => completedTodo(todo.text)}
-                onDelete={() => deleteTodo(todo.text)}
-              />
-            ))}
-          </TodoList>
+          <TodoCounter  />
+          <TodoSearch   />
+
+          <TodoContext.Consumer>
+            {({
+              loading,
+              error,
+              searchedTodos,
+              completedTodo,
+              deleteTodo,
+            })=> (
+              <TodoList>
+              {loading && (
+                <>
+                <TodosLoading />
+                <TodosLoading />
+                <TodosLoading />
+              </>
+              )}
+              {error && <TodosError />}
+              {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
+              {searchedTodos.map(todo => (
+                <TodoItem
+                  key={todo.text}
+                  text={todo.text}
+                  completed={todo.completed}
+                  onComplete={() => completedTodo(todo.text)}
+                  onDelete={() => deleteTodo(todo.text)}
+                />
+              ))}
+            </TodoList>
+            )}
+          </TodoContext.Consumer>
           <img src={imagen} alt="Imagen" className='animada'/>
           <CreateTodoButton />
         </>

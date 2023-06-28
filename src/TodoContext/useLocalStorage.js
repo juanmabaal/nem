@@ -40,3 +40,15 @@ function useLocalStorage (itemName, initialValue ) {
   }
 
   export {useLocalStorage};
+
+  /* localStorage.removeItem('TODOS_V1');
+const defaultTodos = [
+  { text: 'Espalda y triceps', completed: true },
+  { text: 'Pecho y Biceps', completed: false },
+  { text: 'Pierna', completed: true },
+  { text: 'Hombro y Trapecio', completed: false },
+  { text: 'Abdomen y Antebrazos', completed: false },
+];
+
+
+localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos)); */
