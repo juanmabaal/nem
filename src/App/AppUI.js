@@ -7,6 +7,7 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
 import { EmptyTodos} from '../EmptyTodos';
 import { CreateTodoButton } from '../CreateTodoButton';
+import { Modal } from '../Modal';
 import imagen from '../TODO ES POSIBLE.png'
 import { TodoContext } from '../TodoContext';
 
@@ -18,6 +19,8 @@ const {
   searchedTodos,
   completedTodo,
   deleteTodo,
+  openModal,
+  setOpenModal,
 } = React.useContext(TodoContext);
 
     return (
@@ -45,9 +48,15 @@ const {
                 />
               ))}
             </TodoList>
-            
+
           <img src={imagen} alt="Imagen" className='animada'/>
           <CreateTodoButton />
+          {openModal && (
+            <Modal>
+            La funcionalidad modal existe
+          </Modal>
+          )}
+          
         </>
       );
 }
