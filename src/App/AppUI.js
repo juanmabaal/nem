@@ -5,6 +5,7 @@ import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
 import { TodosLoading } from '../TodosLoading';
 import { TodosError } from '../TodosError';
+import { TodoForm } from '../TodoForm'
 import { EmptyTodos} from '../EmptyTodos';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
@@ -53,7 +54,7 @@ const {
           <CreateTodoButton />
           {openModal && (
             <Modal>
-            La funcionalidad modal existe
+            <TodoForm/>
           </Modal>
           )}
           
