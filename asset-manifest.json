@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/nem/static/css/main.d1cb7d23.css",
-    "main.js": "/nem/static/js/main.33d7a6a5.js",
+    "main.css": "/nem/static/css/main.859d0725.css",
+    "main.js": "/nem/static/js/main.380e7fbd.js",
     "static/media/TODO ES POSIBLE.png": "/nem/static/media/TODO ES POSIBLE.1557b7e61fd13776af13.png",
     "index.html": "/nem/index.html",
     "static/media/delete.svg": "/nem/static/media/delete.d9c7e0eeb3f573572e1521b7b69ed33e.svg",
     "static/media/check.svg": "/nem/static/media/check.af03c9a6a0411e40578874e6f00e807b.svg",
-    "main.d1cb7d23.css.map": "/nem/static/css/main.d1cb7d23.css.map",
-    "main.33d7a6a5.js.map": "/nem/static/js/main.33d7a6a5.js.map"
+    "main.859d0725.css.map": "/nem/static/css/main.859d0725.css.map",
+    "main.380e7fbd.js.map": "/nem/static/js/main.380e7fbd.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1cb7d23.css",
-    "static/js/main.33d7a6a5.js"
+    "static/css/main.859d0725.css",
+    "static/js/main.380e7fbd.js"
   ]
 }
