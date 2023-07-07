@@ -1,10 +1,13 @@
 import React from 'react';
+import './EmptyTodos.css'
 
 
 function EmptyTodos() {
   
   return (
-    <p>¡Creas tu primer TODO!</p>
+    <div className='Empty-Todo'>
+      <p>Encuentra tu ejercicio</p>
+    </div>
   );
 }
 

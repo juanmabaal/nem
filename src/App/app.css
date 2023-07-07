@@ -1,14 +1,51 @@
+.app {
+  width: 100%;
+  max-width: 45rem;
+  height: 52rem;
+  border-radius: 2rem;
+  box-shadow: 0 0.3rem 1.2rem rgba(0,0,0,.1);
+  margin: auto;
+  padding: 2rem;
+  background-color: var(--bg-app-color);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.TittleNem {
+  margin-bottom: 0.1em;
+  text-shadow: 0 0 20px #fff, 0 0 30px #ff0;
+  font-size: 3rem;
+  text-align: center;
+  display: block;
+  margin-top: 0.2rem;
+  font-family: IBM Plex Sans Arabic;
+}
+
 .animada {
+    width: 40%;
     position: absolute;
     left:0;
     animation-name: mover-izquierda;
     animation-duration: 4s; /* Ajusta la duración de la animación según tus necesidades */
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    bottom: 0;
   }
   
   @keyframes mover-izquierda {
     50% {
-        left: calc(100% - 200px);
+        left: calc(100% - 250px);
     }
   }
+  
+
+@media (max-width: 600px) {
+  .app {
+      padding: 1.25rem;
+      border-radius: 1.25rem;
+      gap: 1.25rem;
+      height: 100%;
+  }
+}

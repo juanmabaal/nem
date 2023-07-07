@@ -21,44 +21,47 @@ const {
   completedTodo,
   deleteTodo,
   openModal,
-  setOpenModal,
+  /* setOpenModal, */
 } = React.useContext(TodoContext);
 
     return (
-        <>
-          <TodoCounter  />
-          <TodoSearch   />
-          
-              <TodoList>
-              {loading && (
-                <>
-                <TodosLoading />
-                <TodosLoading />
-                <TodosLoading />
-              </>
+        <main className='app'>  
+          <header>
+            <strong className="TittleNem">N E M</strong>
+            <TodoCounter/>
+          </header>       
+            
+            <TodoSearch   />
+            
+                <TodoList>
+                {loading && (
+                  <>
+                  <TodosLoading />                
+                </>
+                )}
+                {error && <TodosError />}
+                {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
+                {searchedTodos.map(todo => (
+                  <TodoItem
+                    key={todo.text}
+                    text={todo.text}
+                    completed={todo.completed}
+                    onComplete={() => completedTodo(todo.text)}
+                    onDelete={() => deleteTodo(todo.text)}
+                  />
+                ))}
+              </TodoList>
+            
+              <img src={imagen} alt="Imagen" className='animada'/>
+              <CreateTodoButton />
+              {openModal && (
+                <Modal>
+                <TodoForm/>
+              </Modal>
               )}
-              {error && <TodosError />}
-              {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
-              {searchedTodos.map(todo => (
-                <TodoItem
-                  key={todo.text}
-                  text={todo.text}
-                  completed={todo.completed}
-                  onComplete={() => completedTodo(todo.text)}
-                  onDelete={() => deleteTodo(todo.text)}
-                />
-              ))}
-            </TodoList>
-
-          <img src={imagen} alt="Imagen" className='animada'/>
-          <CreateTodoButton />
-          {openModal && (
-            <Modal>
-            <TodoForm/>
-          </Modal>
-          )}
-          
-        </>
+         
+        </main>
+        
       );
 }
 
