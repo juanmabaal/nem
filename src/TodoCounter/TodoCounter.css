@@ -19,3 +19,6 @@
     color: red;
   }
   
+.TodoCounter--loading {
+  opacity: 25%;
+}

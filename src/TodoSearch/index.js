@@ -2,7 +2,7 @@ import React from 'react';
 import './TodoSearch.css'
 
 function TodoSearch({searchValue,
-  setSearchValue}) {
+  setSearchValue, loading}) {
   
   return (
     <input placeholder="Busca tu ejercicio" 
@@ -12,6 +12,7 @@ function TodoSearch({searchValue,
       (event) => {
         setSearchValue(event.target.value);
     }}
+    disabled={loading}
     />
   );
 }

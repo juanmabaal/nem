@@ -33,6 +33,11 @@
     animation-iteration-count: infinite;
     bottom: 0;
   }
+
+  .Empty-Search-Results {
+    font-size: 25px;
+    font-family: Noto Sans;
+  }
   
   @keyframes mover-izquierda {
     50% {
