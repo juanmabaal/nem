@@ -45,13 +45,31 @@ function App() {
                 />
                   </TodoHeader>             
               
-                  <TodoList>
-                  {loading && (
+                  <TodoList
+                    error = {error}
+                    loading= {loading}
+                    searchedTodos = {searchedTodos}
+                    onError = {()=> <TodosError /> }
+                    onLoading = {() => <TodosLoading /> }
+                    onEmptyTodos = {() => <EmptyTodos/>}
+                    render = { todo => (
+                    <TodoItem
+                      key={todo.text}
+                      text={todo.text}
+                      completed={todo.completed}
+                      onComplete={() => completedTodo(todo.text)}
+                      onDelete={() => deleteTodo(todo.text)}
+                    />
+                    )}
+                  />
+
+                 
+                    {/* {error && <TodosError />}
+                    {loading && (
                     <>
                     <TodosLoading />                
                   </>
                   )}
-                  {error && <TodosError />}
                   {(!loading && searchedTodos.length === 0) && <EmptyTodos/>}
                   {searchedTodos.map(todo => (
                     <TodoItem
@@ -61,8 +79,8 @@ function App() {
                       onComplete={() => completedTodo(todo.text)}
                       onDelete={() => deleteTodo(todo.text)}
                     />
-                  ))}
-                </TodoList>
+                  ))} */}
+              
               
                 <img src={imagen} alt="Imagen" className='animada'/>
                 <CreateTodoButton 
