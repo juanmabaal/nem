@@ -11,6 +11,7 @@ import { TodoForm } from '../TodoForm'
 import { EmptyTodos} from '../EmptyTodos';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
+import { ChangeAlertWithStorageListener } from '../ChangeAlert'
 import imagen from '../TODO ES POSIBLE.png'
 import './app.css'
 
@@ -28,7 +29,8 @@ function App() {
     searchValue,
     setSearchValue,
     addTodo,
-    setOpenModal
+    setOpenModal,
+    sincronizedTodos
   } = useTodos();
   
       return (
@@ -56,15 +58,6 @@ function App() {
                     onEmptyTodos = {() => <EmptyTodos/>}
                     onEmptySearchResults = {(searchText) => 
                        <p className='Empty-Search-Results'>No hay resultados para {searchText}</p>}
-                    /* render = { todo => (
-                    <TodoItem
-                      key={todo.text}
-                      text={todo.text}
-                      completed={todo.completed}
-                      onComplete={() => completedTodo(todo.text)}
-                      onDelete={() => deleteTodo(todo.text)}
-                    />
-                    )} */
                  > 
                  { todo => (
                     <TodoItem
@@ -90,7 +83,9 @@ function App() {
                   />
                 </Modal>
                 )}
-           
+           <ChangeAlertWithStorageListener
+              sincronize = {sincronizedTodos}
+           />
           </main>
           
         );
