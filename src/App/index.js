@@ -11,7 +11,7 @@ import { TodoForm } from '../TodoForm'
 import { EmptyTodos} from '../EmptyTodos';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
-import { ChangeAlertWithStorageListener } from '../ChangeAlert'
+import { ChangeAlert } from '../ChangeAlert'
 import imagen from '../TODO ES POSIBLE.png'
 import './app.css'
 
@@ -83,7 +83,7 @@ function App() {
                   />
                 </Modal>
                 )}
-           <ChangeAlertWithStorageListener
+           <ChangeAlert
               sincronize = {sincronizedTodos}
            />
           </main>
