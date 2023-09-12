@@ -1,0 +1,49 @@
+.ChangeAlert-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
+.ChangeAlert-container {
+    background: white;
+    border-radius: 5px;
+    width: 300px;
+    height: 80px;
+    padding: 20px; 
+    border-radius: 20px;
+    border-color: #007bff;
+    text-align: center; /* Centrar contenido horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 35%;
+    font-family: IBM Plex Sans Arabic;
+    font-size: 120%;
+  }
+  
+.ChangeAlert-containerbutton {
+    margin-top: 20px;
+    padding: 5px 20px; 
+    width: 60%; 
+    height: 15%;    
+    background-color: #ffdf2c; /* Color de fondo del botón (amarillo) */
+    font-weight: bold;
+    color: black; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    cursor: pointer;
+    align-self: center;
+    font-family: IBM Plex Sans Arabic;
+    font-size: large;
+  }
+
+  .ChangeAlert-containerbutton:hover {
+    background-color: #3cff00; /* Cambia el color de fondo al pasar el mouse (amarillo más claro) */
+  }

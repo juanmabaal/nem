@@ -11,11 +11,7 @@ const renderFunc = props.children || props.render
 
       {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResults(props.searchText)}
 
-      {props.searchedTodos.map (renderFunc)}
-
-      <ul className="TodoList">
-        {props.children}
-      </ul>
+      {(!props.loading && !props.error) && props.searchedTodos.map(renderFunc)}
     </section>
   );
 }
