@@ -16,7 +16,7 @@ function useTodos() {
  const [openModal, setOpenModal] =React.useState('');
 
  const addTodo = (text) => {
-  const newTodos = [...todos];
+  const newTodos = Array.isArray(todos) ? [...todos]: [];
   newTodos.push({
     text,
     completed:false,
@@ -24,17 +24,24 @@ function useTodos() {
   saveTodos(newTodos);
  }
 
- const completedTodos = todos.filter(todo => !!todo.completed).length;
- const totalTodos = todos.length;
+ const todosArray = Array.isArray(todos) ? todos : [];
+
+ const completedTodos =  todosArray.filter(todo => !!todo.completed).length;
+
+ const totalTodos = todosArray.length;
 
 
- const searchedTodos = todos.filter(
-   (todo) => {
+ let searchedTodos = [];
+
+ if (!searchValue.length >= 1) {
+   searchedTodos = todos;
+ } else {
+   searchedTodos = todosArray.filter(todo => {
      const todoText = todo.text.toLowerCase();
      const searchText = searchValue.toLowerCase();
-     return todoText.includes(searchText.toLowerCase());
-   }
- );
+     return todoText.includes(searchText);
+   });
+ }
 
 
 const completedTodo = (text) => {

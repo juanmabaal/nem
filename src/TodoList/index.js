@@ -11,7 +11,10 @@ const renderFunc = props.children || props.render
 
       {(!!props.totalTodos && !props.searchedTodos.length) && props.onEmptySearchResults(props.searchText)}
 
-      {(!props.loading && !props.error) && props.searchedTodos.map(renderFunc)}
+      {!props.loading &&
+        !props.error &&
+        Array.isArray(props.searchedTodos) &&
+        props.searchedTodos.map(renderFunc)}
     </section>
   );
 }
