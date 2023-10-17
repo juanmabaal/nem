@@ -61,22 +61,26 @@ const deleteTodo = (text) => {
  saveTodos(newTodos);
 };
 
-return {
-    
-    loading,
-    error,
-    completedTodos,
-    totalTodos,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    addTodo,
-    completedTodo,
-    deleteTodo,
-    openModal,
-    setOpenModal,
-    sincronizedTodos,       
+const states = {
+  loading,
+  error,
+  completedTodos,
+  totalTodos,
+  searchValue,
+  searchedTodos,
+  openModal,
+};
+
+const statesUpdaters = {
+  addTodo,
+  completedTodo,
+  deleteTodo,
+  setOpenModal,
+  sincronizedTodos, 
+  setSearchValue,      
 }
+
+return {states, statesUpdaters}
 }
 
 export { useTodos }

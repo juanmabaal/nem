@@ -17,21 +17,26 @@ import './app.css'
 
 
 function App() {
+  const { states, statesUpdaters} = useTodos();
+
   const {
     loading,
     error,
-    searchedTodos,
-    completedTodo,
-    deleteTodo,
-    openModal,
     completedTodos,
     totalTodos,
     searchValue,
-    setSearchValue,
+    searchedTodos,
+    openModal,
+  } = states;
+
+  const {
     addTodo,
+    completedTodo,
+    deleteTodo,
     setOpenModal,
-    sincronizedTodos
-  } = useTodos();
+    sincronizedTodos, 
+    setSearchValue, 
+  } = statesUpdaters;
   
       return (
           <main className='app'>  
